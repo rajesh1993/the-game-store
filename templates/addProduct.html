@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Bucket List App</title>
+    <!-- <link href="../static/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="../static/css/jumbotron-narrow.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../static/css/signup.css" rel="stylesheet">
+    <!-- <script language="JavaScript" type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script> -->
+    <!-- <script language="JavaScript" type="text/javascript" src="../static/js/addProduct.js"></script> -->
+  </head>
+ 
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="/">Home</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li>
+            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Python Flask App</h3>
+      </div>
+ 
+      <div class="jumbotron">
+        <h1>Add product</h1>
+        <form class="form-signin" action="" method="post">
+        <label for="inputProductName" class="sr-only">Product Name</label>
+        <input type="name" name="inputProductName" id="inputProductName" class="form-control" placeholder="Product Name" required autofocus>
+        <label for="categorySelect" class="mr-sm-2">Category</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="categorySelect" name="categorySelect">
+          <option selected>Choose...</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Artwork">Artwork</option>
+          <option value="Games">Games</option>
+          <option value="Movies">Movies</option>
+        </select>
+        <label for="inputDesc" class="sr-only">Description</label>
+        <input type="name" name="inputDesc" id="inputDesc" class="form-control" placeholder="Description" required autofocus>
+        <label for="inputColor" class="sr-only">Color</label>
+        <input type="name" name="inputColor" id="inputColor" class="form-control" placeholder="Color" required autofocus>
+        <input id="btnAddProd" class="btn btn-lg btn-primary btn-block" type="submit">
+        <!-- <input id="btnSignUp" class="btn btn-default" type="submit" value="Sign Up"> -->
+      </form>
+      {% if error %}
+        <!-- <p class="error"><strong>Error:</strong> {{ error }}</p> -->
+        <h3>ERROR</h3>
+      {% endif %}
+      {% if success %}
+        <p><strong>Successfully added product!</strong></p>
+      {% endif %}
+      </div>
+      <footer class="footer">
+        <p>&copy; Company 2015</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Catalog</h1>
+<div class="row">
+  {% set count = [0] %}
+  {% for product in products %}
+    {% set desc_tag = "demo" + count[0]|string  %}
+    {% set desc_tag_no = "#demo" + count[0]|string %}
+  <div class="col-sm-4">
+    <a href="productPage?ProductName={{product[0]}}&Category={{product[1]}}">
+    <!-- <a href="#demo" data-toggle="collapse"> -->
+      <img src="../static/img/default.png" class="img-responsive" alt="Random Name">
+    </a>
+    <p class="text-center"><strong>{{ product[0] }}</strong></p><br>
+    <div id="{{desc_tag}}" class="collapse">
+      <!-- <div id="demo" class="collapse"> -->
+      <p>Category : {{product[1]}}</p>
+      <p>Description : {{product[2]}}</p>
+      <p>Color : {{product[3]}}</p>
+    </div>
+  </div>
+  {% if count.append(count.pop() + 1) %}{% endif %}
+  {% endfor %}
+</div>
+</div>
+
+</body>
+</html>
