@@ -143,6 +143,11 @@ def addProduct():
 			error = 'Invalid Product/Product already exists'
 	return render_template('addProduct.html', error = error, success = success)
 
+@app.route('/personalCart', methods = ['GET', 'POST'])
+def personalCart():
+	global loggedUser
+	return render_template('personalCart.html')
+
 
 if __name__ == "__main__":
 	app.run(debug = True)
